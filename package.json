@@ -1,0 +1,23 @@
+{
+  "name": "leopard-smash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knottyChive/leopard-smash.git"
+  },
+  "author": "Jalen Gilyard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knottyChive/leopard-smash/issues"
+  },
+  "homepage": "https://github.com/knottyChive/leopard-smash#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
