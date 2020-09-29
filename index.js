@@ -17,6 +17,7 @@ var completed = [];
 
 app.get('/', (req, res) => {
     res.render("index", { tasks: tasks, completed: completed });
+    
 });
 
 app.post('/addtask', (req, res) => {
