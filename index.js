@@ -11,6 +11,9 @@ const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// make styles public 
+app.use(express.static("public"));
+
 // Couple of items 
 var tasks = ["be on time", "don't cheat"];
 
