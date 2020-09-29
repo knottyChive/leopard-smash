@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // set the use cases
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +48,6 @@ app.post('/removetask', (req, res) => {
     res.redirect("/")
 })
 
-app.listen(8080, () => {
-    console.log("Running server...")
+app.listen(port, () => {
+    console.log(`Running server on port: ${port}`);
 })
