@@ -1,27 +1,68 @@
 <html>
     <head>
         <title> To-do List</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h2> We have a to-do list </h2>
-            <form action="/addtask" method="POST">
-                <input type="text" name="newtask" placeholder="add new task">
-                <button> Add a Task </button>
-                <h2> Tasks </h2>
-                <% for(var i = 0; i < tasks.length; i++) {  %>
-                    <li>
-                        <input type="checkbox" name="check" value="<%= tasks[i] %>"> <%= tasks[i] %>  
-                    </li>
-                <% } %>
-                <button formaction="/removetask" type="submit"> Remove Task </button>
+        <div class="container" id="app">
+            <h2 id="title"> We have a to-do list </h2>
+            <form class="form-group" action="/addtask" method="POST">
+                <!-- New Task -->
+                
+                
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inputBox" name="newtask" placeholder="Task">
+                    <div class="input-group-btn">
+                        <button class="btn btn-success" type="submit">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="btn btn-danger" formaction="/removetask" type="submit">
+                            <i class="fas fa-minus"></i> 
+                        </button>
+                    </div>
+                </div>
+                <!-- Display Tasks Section -->
+                <div class="card" id="list">
+                    <div class="card-header">
+                        <h2 class="subtitle">To-do List</h2> 
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <% for(var i = 0; i < tasks.length; i++) {  %>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="check" value="<%= tasks[i] %>" id="toDo"> <%= tasks[i] %>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+                
+
+                <!-- Remove Tasks Button -->
+                
             </form>
-            <h2> Completed tasks </h2>
-            <% for (var z = 0; z < completed.length; z++) { %>
-                <li> <%= completed[z] %>
+
+            <% if (completed.length > 0) { %>
+                <!-- Completed Tasks Section -->
+                <div class="card" id="list">
+                    <div class="card-header">
+                        <h2 class="subtitle">Completed Todos</h2> 
+                    </div>
+                    <ul class="list-group list-group-flush" id="completed">
+                        <% for (var z = 0; z < completed.length; z++) { %>
+                            <li id="completedToDo"> <%= completed[z] %>
+                        <% } %>
+                    </ul>
+                </div> 
+            <% } else { %>
+                <h2 class="subtitle">No Completed Tasks... Yet!</h2>
             <% } %>
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/c34965e849.js" crossorigin="anonymous"></script>
+  
     </body>
 </html>

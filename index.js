@@ -3,6 +3,8 @@ const express = require("express");
 
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -14,6 +16,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // make styles public 
 app.use(express.static("public"));
 
+/*const mongoDB =  'mongodb+srv://testConnection:b8RwqJYgo4hD1xhe@nodetodoexample-iqnde.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB Connection Error:'));
+
+const todo = require('./models/todo.model');
+*/
 // Couple of items 
 var tasks = ["be on time", "don't cheat"];
 

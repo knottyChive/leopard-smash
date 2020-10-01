@@ -1,5 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Sansita+Swashed:wght@600&display=swap');
+
 body {
     background: rgb(245, 245, 245);
     color: #be3131;
     margin-top: 20px;
+    text-align: center;
+    font-family: "Monterrat", sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: 300;
+    letter-spacing: .2em;
+    margin-bottom: 1.2em;
+}
+
+form {
+    max-width: 100%;
+}
+.input-group {
+    max-width: 60%;
+    margin: auto;
+}
+
+#list {
+    max-width: 75%;
+    margin: 1.5em auto;
+}
+
+#completed li {
+    list-style-type: none;
+    line-height: 1.9em;
+}
+
+.input-group-btn {
+    margin-left: .5em;
 }
